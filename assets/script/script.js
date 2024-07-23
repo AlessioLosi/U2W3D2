@@ -12,9 +12,9 @@ function stampaNome(){
 const salva = function () {
     const fNameValue = fName.value
     const lNameValue = lName.value
-    localStorage.setItem('form-content', fNameValue + lNameValue)
+    const fullName= fNameValue + lNameValue
     if (fNameValue, lNameValue) {
-        localStorage.setItem('form-content', fNameValue + lNameValue)
+        localStorage.setItem('form-content', fullName)
         stampaNome();
 }}
 saveButton.addEventListener('click', salva) 
@@ -22,7 +22,10 @@ saveButton.addEventListener('click', salva)
 const reset= function(){
   fName.value = ''
   lName.value= ''
-  localStorage.removeItem('form-content', fNameValue + lNameValue)
+  const fullName= fNameValue + lNameValue
+  localStorage.removeItem('form-content', fullName)
   alert('hai eliminato il nome utente')
 }
-resetButton.addEventListener('click', reset)
+resetButton.addEventListener('click', reset) 
+
+ stampaNome()
